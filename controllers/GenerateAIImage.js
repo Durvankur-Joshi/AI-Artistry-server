@@ -5,7 +5,7 @@ import { createError } from "../error.js";
 
 dotenv.config();
 
-const HUGGING_FACE_API_URL = "https://api-inference.huggingface.co/models/Melonie/text_to_image_finetuned";
+const HUGGING_FACE_API_URL = "https://api-inference.huggingface.co/models/ZB-Tech/Text-to-Image";
 const API_KEY = process.env.HUGGING_FACE_API_KEY;
 
 export const generateImage = async (req, res, next) => {
