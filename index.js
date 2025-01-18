@@ -5,7 +5,8 @@ import * as dotenv from "dotenv";
 
 import PostRouter from "./routes/Post.js";
 import GenerateImageRouter from "./routes/generateImage.js";
-
+import UserRoutes from "./routes/User.js";
+import router from "./routes/chat.js";
 dotenv.config();
 
 const app = express();
@@ -26,6 +27,9 @@ app.use((err, req, res, next) => {
 
 app.use("/api/post", PostRouter);
 app.use("/api/generateImage", GenerateImageRouter);
+app.use("/api/user" , UserRoutes )
+app.use("/api" , router );
+
 
 // Default get
 app.get("/", async (req, res) => {
