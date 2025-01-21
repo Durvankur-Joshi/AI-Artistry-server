@@ -5,7 +5,7 @@ import ChatbotInteraction from "../models/ChatbotInteraction.js";
 
 dotenv.config();
 
-const HUGGING_FACE_API_URL = "https://api-inference.huggingface.co/models/facebook/blenderbot-3B";
+const HUGGING_FACE_API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct/v1/chat/completions";
 const API_KEY = process.env.HUGGING_FACE_API_KEY;
 
 export const chatbotResponse = async (req, res, next) => {
