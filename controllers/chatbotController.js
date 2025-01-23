@@ -95,7 +95,11 @@ const formatReply = (reply) => {
   const escapedReply = escapeHtml(reply);
 
   return escapedReply
-    .replace(/###(.*?)###/g, "<b><u>$1</u></b>") // Bold and underline for `###text###`
-    .replace(/\*\*\*?(.*?)\*\*\*?/g, "<b>$1</b>")
-    .replace(/\n/g, "<br>");                    // Line breaks for newlines
+    .replace(/##(.*?)##/g, "<b><u>$1</u></b>") // Bold and underline for `##text##`
+    .replace(/^### (.*?)/gm, "<b><u>$1</u></b>") // Bold and underline for headings starting with `###`
+    .replace(/\*\*\*?(.*?)\*\*\*?/g, "<b>$1</b>") // Bold for `***text***` or `**text**`
+    .replace(/\b\d+(\.\d+)?\s*(miles|minutes|hours|mph)\b/g, "<span style='color:blue;'>$&</span>") // Highlight numbers with units
+    .replace(/\\\[([^\\]+?)\\\]/g, "<i>$1</i>") // Italicize LaTeX-like math formulas
+    .replace(/\\boxed{(\d+)}/g, "<span style='color:green; font-weight:bold;'>$1</span>") // Highlight boxed results
+    .replace(/\n/g, "<br>"); // Line breaks for newlines
 };
