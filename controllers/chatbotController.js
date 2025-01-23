@@ -4,7 +4,7 @@ import ChatbotInteraction from "../models/ChatbotInteraction.js";
 
 dotenv.config();
 
-const HUGGING_FACE_API_URL = "https://api-inference.huggingface.co/models/Qwen/Qwen2.5-Coder-32B-Instruct";
+const HUGGING_FACE_API_URL = "https://api-inference.huggingface.co/models/meta-llama/Llama-3.2-3B-Instruct";
 const API_KEY = process.env.HUGGING_FACE_API_KEY;
 
 export const chatbotResponse = async (req, res) => {
