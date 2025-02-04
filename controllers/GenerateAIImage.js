@@ -3,8 +3,7 @@ import axios from "axios";
 import { createError } from "../error.js"; // Ensure correct path
 
 dotenv.config();
-
-const HUGGING_FACE_API_URL = "https://api-inference.huggingface.co/models/stable-diffusion-v1-5";
+const HUGGING_FACE_API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0";
 const API_KEY = process.env.HUGGING_FACE_API_KEY;
 
 export const generateImage = async (req, res, next) => {
